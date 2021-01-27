@@ -11,8 +11,8 @@ public class browserTest {
 	public static void main(String[] args) throws Exception {
 		
 		 //location to the project
-//		String projectPath=System.getProperty("user.dir");
-//		System.out.println("project path" + projectPath);
+		String projectPath=System.getProperty("user.dir");
+		System.out.println("project path" + projectPath);
 
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\jenny\\git\\TestProject\\SeleniumFramework\\lib\\drivers\\chromedriver.exe");
 		//WebDriver driver1=new FirefoxDriver();
