@@ -23,7 +23,14 @@ public class ExtentReportsBasicdemo {
 	  static WebDriver driver=null;
 	
 	public static void main(String[] args) throws Exception {
-		ExtentHtmlReporter htmlreporter = new ExtentHtmlReporter("extentReports.html");
+		
+		SimpleDateFormat format= new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
+		Date date= new Date();
+		String actualdate=format.format(date);
+		
+		String projectPath=System.getProperty("user.dir");
+		String reportPath=projectPath+"/Reports/ExecutionReport_"+actualdate+".html";
+		ExtentHtmlReporter htmlreporter = new ExtentHtmlReporter(reportPath);
 		
 		ExtentReports extent = new ExtentReports();
         extent.attachReporter(htmlreporter);
@@ -31,7 +38,6 @@ public class ExtentReportsBasicdemo {
      // creates a toggle for the given test, adds all log events under it    
         ExtentTest test1 = extent.createTest("Google search Test One", "this is a test to validate google search funcionality");
         
-    	String projectPath=System.getProperty("user.dir");
 		System.setProperty("webdriver.chrome.driver", projectPath+"\\lib\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		
@@ -45,12 +51,10 @@ public class ExtentReportsBasicdemo {
 		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
 		test1.pass("Pressed keyboard enter key");
 	
+	
         // test with snapshot
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		SimpleDateFormat format= new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
-		Date date= new Date();
-		String actualdate=format.format(date);
-		String screenshotPath=System.getProperty("user.dir")+"/Reports/"+actualdate+".jpg";
+		String screenshotPath=projectPath+"/Reports/Screenshots/"+actualdate+".jpg";
 		File dest = new File (screenshotPath);
 		
 		FileUtils.copyFile(src, dest);
