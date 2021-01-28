@@ -1,7 +1,15 @@
 package test;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.SessionNotCreatedException;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,7 +23,7 @@ public class ExtentReportsBasicdemo {
 	  static WebDriver driver=null;
 	
 	public static void main(String[] args) throws Exception {
-		ExtentHtmlReporter htmlreporter = new ExtentHtmlReporter("extent.html");
+		ExtentHtmlReporter htmlreporter = new ExtentHtmlReporter("extentReports.html");
 		
 		ExtentReports extent = new ExtentReports();
         extent.attachReporter(htmlreporter);
@@ -36,12 +44,26 @@ public class ExtentReportsBasicdemo {
 		Thread.sleep(3000);
 		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
 		test1.pass("Pressed keyboard enter key");
+	
+        // test with snapshot
+		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		SimpleDateFormat format= new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
+		Date date= new Date();
+		String actualdate=format.format(date);
+		String screenshotPath=System.getProperty("user.dir")+"/Reports/"+actualdate+".jpg";
+		File dest = new File (screenshotPath);
+		
+		FileUtils.copyFile(src, dest);
+		
+		test1.addScreenCaptureFromPath(screenshotPath,"test case");
+        // calling flush writes everything to the log file
 		
 		driver.close();
 		driver.quit();
 		test1.pass("Close the browser");
 		
 		test1.info("Test completed");
+        extent.flush();
 	}
 
 }
