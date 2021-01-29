@@ -2,24 +2,32 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-27T19:04:36 PET" name="Default suite" finished-at="2021-01-27T19:04:44 PET" duration-ms="8825">
+  <suite started-at="2021-01-28T19:56:06 PET" name="Default suite" finished-at="2021-01-28T19:56:11 PET" duration-ms="4985">
     <groups>
     </groups>
-    <test started-at="2021-01-27T19:04:36 PET" name="Default test" finished-at="2021-01-27T19:04:44 PET" duration-ms="8825">
-      <class name="test.TestNG_Demo">
-        <test-method is-config="true" signature="setUpTest()[pri:0, instance:test.TestNG_Demo@59af0466]" started-at="2021-01-27T19:04:36 PET" name="setUpTest" finished-at="2021-01-27T19:04:40 PET" duration-ms="4845" status="PASS">
+    <test started-at="2021-01-28T19:56:06 PET" name="Default test" finished-at="2021-01-28T19:56:11 PET" duration-ms="4985">
+      <class name="test.ExtendReportsDemowithTestNG">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.ExtendReportsDemowithTestNG@4e7912d8]" started-at="2021-01-28T19:56:06 PET" name="setUp" finished-at="2021-01-28T19:56:06 PET" duration-ms="208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="setUpTest()[pri:0, instance:test.ExtendReportsDemowithTestNG@4e7912d8]" started-at="2021-01-28T19:56:06 PET" name="setUpTest" finished-at="2021-01-28T19:56:08 PET" duration-ms="2060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method signature="googleSearch()[pri:0, instance:test.TestNG_Demo@59af0466]" started-at="2021-01-27T19:04:40 PET" name="googleSearch" finished-at="2021-01-27T19:04:44 PET" duration-ms="3185" status="PASS">
+        <test-method signature="test1()[pri:0, instance:test.ExtendReportsDemowithTestNG@4e7912d8]" started-at="2021-01-28T19:56:08 PET" name="test1" finished-at="2021-01-28T19:56:10 PET" duration-ms="2152" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- googleSearch -->
-        <test-method is-config="true" signature="TearDownTest()[pri:0, instance:test.TestNG_Demo@59af0466]" started-at="2021-01-27T19:04:44 PET" name="TearDownTest" finished-at="2021-01-27T19:04:44 PET" duration-ms="756" status="PASS">
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="TearDownTest()[pri:0, instance:test.ExtendReportsDemowithTestNG@4e7912d8]" started-at="2021-01-28T19:56:10 PET" name="TearDownTest" finished-at="2021-01-28T19:56:11 PET" duration-ms="734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDownTest -->
-      </class> <!-- test.TestNG_Demo -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.ExtendReportsDemowithTestNG@4e7912d8]" started-at="2021-01-28T19:56:11 PET" name="tearDown" finished-at="2021-01-28T19:56:12 PET" duration-ms="383" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.ExtendReportsDemowithTestNG -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

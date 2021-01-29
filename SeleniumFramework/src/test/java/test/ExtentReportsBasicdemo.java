@@ -20,8 +20,8 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class ExtentReportsBasicdemo {
 	
-	  static WebDriver driver=null;
-	
+	static WebDriver driver=null;
+
 	public static void main(String[] args) throws Exception {
 		
 		SimpleDateFormat format= new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
@@ -50,7 +50,6 @@ public class ExtentReportsBasicdemo {
 		Thread.sleep(3000);
 		driver.findElement(By.name("btnK")).sendKeys(Keys.RETURN);
 		test1.pass("Pressed keyboard enter key");
-	
 	
         // test with snapshot
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
